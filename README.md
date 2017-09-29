@@ -19,7 +19,7 @@ mapply is a multivariate version of sapply. mapply applies FUN to the first elem
 
 To measure the performance of mapply, i am replicating it for 100,500,1000,1500,2000 times.
 
-after using benchmark function, we are interested in the elapsed_times, which is in the [3] column
+after using benchmark function, we are interested in the elapsed_time, which is in the [3] column
 ```
 rep <- c(100,500,1000,1500,2000)
 for(i in rep){
@@ -46,9 +46,9 @@ ggplot(performance_final, aes(x = as.integer(replications))) +
 # 2. rapply:
 rapply is a recursive version of lapply.
 
-To measure the performance of mapply, i am replicating it for 100,500,1000,1500,2000 times.
+To measure the performance of rapply, i am replicating it for 100,500,1000,1500,2000 times.
 
-after using benchmark function, we are interested in the elapsed_times, which is in the [3] column
+after using benchmark function, we are interested in the elapsed_time, which is in the [3] column
 ```
 for(i in rep){
   tmp <- benchmark(rapply(l1,log2), replications = i)[3]
@@ -73,12 +73,12 @@ ggplot(performance_final, aes(x = as.integer(replications))) +
 
 -------
 
-# 1. mapply:
-mapply is a multivariate version of sapply. mapply applies FUN to the first elements of each … argument, the second elements, the third elements, and so on. 
+# 3. tapply:
+tapply() applies a function or operation on subset of the vector broken down by a given factor variable. 
 
-To measure the performance of mapply, i am replicating it for 100,500,1000,1500,2000 times.
+To measure the performance of tapply, i am replicating it for 100,500,1000,1500,2000 times.
 
-after using benchmark function, we are interested in the elapsed_times, which is in the [3] column
+after using benchmark function, we are interested in the elapsed_time, which is in the [3] column
 ```
 rep <- c(100,500,1000,1500,2000)
 for(i in rep){
@@ -91,7 +91,7 @@ Similarly, we measure the performance of for loop.
 Later combine performance of mapply and for loop.
 ```
 performance_final <- cbind(performance_tapply, performance_for$elapsed_time_for)
-names(performance_final)[3] <- "elapsed_time_for"
+names(performance_final)[3]<- "elapsed_time_for"
 ```
 Plot the graph
 ```
@@ -99,6 +99,7 @@ ggplot(performance_final, aes(x = as.integer(replications))) +
   geom_line(aes(y = elapsed_time, colour = "elapsed_time_tapply")) + 
   geom_line(aes(y = elapsed_time_for, colour = "elapsed_time_for"))
 ```
+![](tapply_plot.jpeg)
 ![](rapply_plot.png)
 
 
