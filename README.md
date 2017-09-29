@@ -69,7 +69,7 @@ ggplot(performance_final, aes(x = as.integer(replications))) +
   geom_line(aes(y = elapsed_time, colour = "elapsed_time_rapply")) + 
   geom_line(aes(y = elapsed_time_for, colour = "elapsed_time_for"))
 ```
-![](images/rapply_plot.jpeg)
+![](images/rapply_plot.png)
 
 -------
 
