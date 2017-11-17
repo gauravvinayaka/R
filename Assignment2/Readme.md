@@ -16,8 +16,11 @@ liibrary(caret)
 
 # 1. Predictive mean matching
 
-The predictive mean matching method is an imputation method available for continuous variables. It is like the regression method except that for each missing value, it imputes a value randomly from a set of observed values whose predicted values are closest to the predicted value for the missing value from the simulated regression model.
--------
+
+
+-------------
+
+
 # 2. Amelia 
 Amelia package performs multiple imputation to deal with missing values. 
 It makes few assumptions:
