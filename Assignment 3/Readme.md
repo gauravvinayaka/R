@@ -3,6 +3,7 @@
 In this assignment, I have created 2 packages : percep and simpperc.
 
 In percep package I implement perceptron on a two-class set of lienarly separable data.
+
 And in simpperc package I have used neural-network functions like :
 
 1. neuralnetwork 
